@@ -1,0 +1,2 @@
+(()=>{"use strict";var o="segunda";const e=function(){return"oi"};(Object.getOwnPropertyDescriptor(e,"name")||{}).writable||Object.defineProperty(e,"name",{value:"default",configurable:!0}),console.log("Rafa",30),console.log("Breno",o),console.log(4),console.log(o),console.log("oi")})();
+//# sourceMappingURL=bundle.js.map
