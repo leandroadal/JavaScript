@@ -11,6 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "core-js": "^3.3.2",
     "regenerator-runtime": "^0.13.3",

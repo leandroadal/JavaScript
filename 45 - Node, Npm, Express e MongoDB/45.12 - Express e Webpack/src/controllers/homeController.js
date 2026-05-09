@@ -1,8 +1,8 @@
-exports.paginaInicial = (req, res) => {
-    // O render renderiza uma view/template e enviar o HTML ao navegador
+export const paginaInicial = (req, res) => {
+    // O render renderiza uma view/template e envia o HTML ao navegador
     res.render('index');
-}
+};
 
-exports.trataPost = (req, res) => {
-    res.send(`Rota do POST`);
-}
+export const trataPost = (req, res) => {
+    res.send('Rota do POST');
+};

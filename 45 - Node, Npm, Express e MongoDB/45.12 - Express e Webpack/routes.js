@@ -1,14 +1,16 @@
-const express = require('express');
-const route = express.Router();
+import express from 'express';
+
 // Importa os controladores
-const homeController = require('./src/controllers/homeController');
-const contatoController = require('./src/controllers/contatoController');
+import * as homeController from './src/controllers/homeController.js';
+import * as contatoController from './src/controllers/contatoController.js';
+
+const route = express.Router();
 
 // Rotas do home
 route.get('/', homeController.paginaInicial);
 route.post('/', homeController.trataPost);
 
 // Rotas de contato
-route.get('/contato', contatoController.paginaInicial)
+route.get('/contato', contatoController.paginaInicial);
 
-module.exports = route;
+export default route;

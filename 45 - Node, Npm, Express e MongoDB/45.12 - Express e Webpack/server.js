@@ -1,31 +1,26 @@
-/**
- * Arquivos estáticos são arquivos enviados ao navegador exatamente como estão armazenados no servidor, sem processamento dinâmico.
- */
+import express from 'express';
+import routes from './routes.js';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const express = require('express');
-// importa as rotas
-const routes = require('./routes');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
-const path = require('path');
-
-// Configura uma pasta pública de arquivos estáticos no Express.js
+// arquivos estáticos
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-// Serve para o Express conseguir interpretar dados enviados por formulários HTML
+// interpretar dados enviados por formulários HTML
 app.use(express.urlencoded({extended: true}));
 
-// Define onde estão os arquivos de views da aplicação.
+// Localização dos arquivos de views
 app.set('views', path.resolve(__dirname, 'src', 'views'));
-
-// Define qual motor de template será usado
+// Template
 app.set('view engine', 'ejs');
 
-// Usa as rotas do arquivo './routes'
 app.use(routes);
 
-// Para o servidor ficar escutando na porta 3000
 app.listen(3000, () => {
     console.log('Acessar http://localhost:3000');
     console.log('Servidor executando na porta 3000');
