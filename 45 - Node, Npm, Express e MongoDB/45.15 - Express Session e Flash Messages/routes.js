@@ -8,6 +8,7 @@ const route = express.Router();
 
 // Rotas do home
 route.get('/', homeController.paginaInicial);
+route.get('/flash', homeController.testeFlash);
 route.post('/', homeController.trataPost);
 
 // Rotas de contato

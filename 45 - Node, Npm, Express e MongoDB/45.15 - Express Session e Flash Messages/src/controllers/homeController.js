@@ -7,15 +7,18 @@ export const paginaInicial = (req, res) => {
         console.log('logando usuário.');
         req.session.usuario = {nome: 'Leonardo', logado: true};
     }
-    
-    // As mensagens flash são armazenadas na sessão e só ficam disponíveis na próxima requisição
-    req.flash('info', 'Flash Message de teste');
 
-    // Então, aqui a mensagem sera exibida e removida da sessão pois o console.log ja a executa
-    console.log(req.flash('info')); // Exibe a mensagem flash e a remove da sessão
-
+    // Pega as mensagens flash da sessão e mostra no console
+    const flashMessages = req.flash('info');
+    console.log('Flash Messages:', flashMessages);
     res.render('index');
-    return;
+};
+
+export const testeFlash = (req, res) => {
+    // As mensagens flash são armazenadas na sessão e só ficam disponíveis na próxima requisição
+    req.flash('info', 'Flash Message de Sucesso!');
+    // Redireciona para a página inicial para mostrar a mensagem flash
+    res.redirect('/');
 };
 
 export const trataPost = (req, res) => {
