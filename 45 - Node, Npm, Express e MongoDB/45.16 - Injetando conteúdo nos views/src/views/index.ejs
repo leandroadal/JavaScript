@@ -1,0 +1,29 @@
+<%- include('includes/head'); %>
+
+  <section class="container">
+    <h1>
+      <% if (typeof titulo !== 'undefined') { %>
+        <%= titulo %> <br>
+      <% } else { %>
+        <p>Título não definido</p>
+      <% }; %>
+
+    <h2><%= umaVariavelLocal %></h2>
+
+    <h3><% if (flashMessages.length > 0) { %>
+      <div class="flash-messages">
+          <% flashMessages.forEach(message => { %>
+              <p><%= message %></p>
+          <% }); %>
+      </div>
+    <% } %>
+    </h3>
+
+    <form action="/" method="post">
+      <label>Cliente</label>
+      <input type="text" name="cliente">
+      <button>Enviar</button>
+    </form>
+  </section>
+
+<%- include('includes/footer'); %>
