@@ -1,0 +1,23 @@
+{
+  "name": "48.01",
+  "version": "1.0.0",
+  "description": "Para garantir que o código do projeto seja consistente e fácil de ler, é importante definir algumas regras de formatação. Uma maneira eficaz de fazer isso é utilizando um arquivo `.editorconfig`, que pode ser reconhecido por muitos editores de código e IDEs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3"
+  }
+}
